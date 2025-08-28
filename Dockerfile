@@ -90,4 +90,5 @@ ENV PRID-UAT_MSSQL_PORT="1433"
 ENV PYTHONUNBUFFERED=1
 
 # Command to run the application using the Gunicorn production server
-CMD ["gunicorn", "--log-level", "info", "-w", "8", "-k", "uvicorn.workers.UvicornWorker", "main:app", "-b", "0.0.0.0:8502"] 
+
+CMD ["gunicorn", "--log-level", "info", "-w", "8", "-k", "uvicorn.workers.UvicornWorker", "main:app", "-b", "0.0.0.0:8000"] 
