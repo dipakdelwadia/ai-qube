@@ -26,7 +26,7 @@ RUN useradd --create-home --shell /bin/bash app \
 USER app
 
 # Expose the port the app runs on
-EXPOSE 8502
+EXPOSE 8000
 
 # Define environment variables for the database and API keys
 # These will be passed in when you run the container
@@ -92,3 +92,4 @@ ENV PYTHONUNBUFFERED=1
 # Command to run the application using the Gunicorn production server
 
 CMD ["gunicorn", "--log-level", "info", "-w", "8", "-k", "uvicorn.workers.UvicornWorker", "main:app", "-b", "0.0.0.0:8000"] 
+
